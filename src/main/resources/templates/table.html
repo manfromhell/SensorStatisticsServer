@@ -12,7 +12,43 @@
     <a href="/table" style="color: grey" th:href="@{/table}">Sensors Data</a>
 </header>
 <p th:text="|Door opening sensors data|"></p>
-<table border="1">
+<button id="toggleButton">Start Auto-Reload</button>
+
+<script>
+    let reloadInterval;
+    const button = document.getElementById('toggleButton');
+
+    // Function to start the auto-reload
+    function startAutoReload() {
+        reloadInterval = setInterval(() => {
+            location.reload();
+        }, 5000);
+        button.textContent = 'Stop Auto-Reload';
+        localStorage.setItem('autoReload', 'true');
+    }
+
+    // Function to stop the auto-reload
+    function stopAutoReload() {
+        clearInterval(reloadInterval);
+        reloadInterval = null;
+        button.textContent = 'Start Auto-Reload';
+        localStorage.setItem('autoReload', 'false');
+    }
+
+    // Event listener for the button
+    button.addEventListener('click', () => {
+        if (reloadInterval) {
+            stopAutoReload();
+        } else {
+            startAutoReload();
+        }
+    });
+
+    // Initialize the auto-reload state based on localStorage
+    if (localStorage.getItem('autoReload') === 'true') {
+        startAutoReload();
+    }
+</script><table border="1">
     <thead>
     <tr>
         <th th:text="|Id|"/>
