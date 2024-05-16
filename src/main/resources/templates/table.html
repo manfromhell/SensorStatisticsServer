@@ -15,14 +15,14 @@
 
 <script>
     let reloadInterval;
-    const button = document.getElementById('toggleButton');
+    const reloadButton = document.getElementById('toggleButton');
 
     // Function to start the auto-reload
     function startAutoReload() {
         reloadInterval = setInterval(() => {
             location.reload();
         }, 5000);
-        button.textContent = 'Stop Auto-Reload';
+        reloadButton.textContent = 'Stop Auto-Reload';
         localStorage.setItem('autoReload', 'true');
     }
 
@@ -30,12 +30,12 @@
     function stopAutoReload() {
         clearInterval(reloadInterval);
         reloadInterval = null;
-        button.textContent = 'Start Auto-Reload';
+        reloadButton.textContent = 'Start Auto-Reload';
         localStorage.setItem('autoReload', 'false');
     }
 
-    // Event listener for the button
-    button.addEventListener('click', () => {
+    // Event listener for the reloadButton
+    reloadButton.addEventListener('click', () => {
         if (reloadInterval) {
             stopAutoReload();
         } else {
@@ -48,6 +48,55 @@
         startAutoReload();
     }
 </script>
+
+<button type="button" id="setSound">Enable sound</button>
+<script>
+    let soundEnabled = localStorage.getItem('soundEnabled') === 'true';
+    const button = document.getElementById('setSound');
+    if (soundEnabled) {
+        button.textContent = 'Disable sound';
+    }else {
+        button.textContent = 'Enable sound';
+    }
+
+    function setSound(enable) {
+        let http = new XMLHttpRequest();
+        let url = "/setSound/"+enable;
+        http.open("POST", url, true);
+        http.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        http.onreadystatechange = function() {
+            if(http.status === 200) {
+                document.getElementById('sound-status').innerText = http.responseText;
+            } else {
+                console.log(`Error: ${http.status}`);
+            }
+        }
+        http.send(null);
+        if (enable) {
+            soundEnabled = true;
+            localStorage.setItem('soundEnabled', 'true');
+            button.textContent = 'Disable sound';
+        } else {
+            soundEnabled = false;
+            localStorage.setItem('soundEnabled', 'false');
+            button.textContent = 'Enable sound';
+        }
+    }
+
+    // Event listener for the reloadButton
+    button.addEventListener('click', () => {
+        if (soundEnabled) {
+            setSound(false);
+        } else {
+            setSound(true);
+        }
+    });
+    setSound(soundEnabled)
+</script>
+
+<p th:text="|Sound status: |"></p>
+<p id='sound-status' th:text="${soundEnabled}"></p>
+
 <table border="1">
     <thead>
     <tr>
