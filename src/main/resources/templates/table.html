@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Door opening signal</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+</head>
+<body>
+<header th:fragment="site-header">
+    <a href="/" th:href="@{/}"></a>
+    <a href="/" style="color: grey" th:href="@{/}">Home</a>
+    <a href="/table" style="color: grey" th:href="@{/table}">Sensors Data</a>
+</header>
+<p th:text="|Door opening sensors data|"></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th th:text="|Id|"/>
+        <th th:text="|Created|"/>
+        <th th:text="|Light|"/>
+        <th th:text="|Gyro|"/>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sensor, iStat : ${sensorData}"
+        th:style="${iStat.odd}? 'font-weight: bold;'"
+        th:alt-title="${iStat.even}? 'even' : 'odd'">
+        <td th:text="${sensor.id}"/>
+        <td th:text="${sensor.created}"/>
+        <td th:text="${sensor.light}"/>
+        <td th:text="${sensor.gyro}"/>
+    </tr>
+    </tbody>
+</table>
+<div th:if="${totalPages > 0}" class="pagination"
+     th:each="pageNumber : ${pageNumbers}">
+    <a th:href="@{/table(size=${sensorData.size}, page=${pageNumber}-1)}"
+       th:text="${pageNumber}"
+       th:class="${pageNumber==pageNumber} ? active"></a>
+</div>
+
+<div class="container">
+    <h2 align="center">Data Graph</h2>
+
+    <div id="container"
+         style="width: 550px; height: 400px; margin: 0 auto"></div>
+</div>
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script th:inline="javascript">
+    $(function () {
+        const lightData = [[${created}]].map((dataEl, i) => {
+            return [new Date([[${created}]][i]).getTime(), [[${light}]][i]] // x, y format
+        });
+        const gyroData = [[${created}]].map((dataEl, i) => {
+            return [new Date([[${created}]][i]).getTime(), [[${gyro}]][i]] // x, y format
+        });
+        Highcharts.chart('container', {
+            title: {
+                text: 'Sensors Usage'
+            },
+            xAxis: {
+                type: 'datetime',
+                labels: {
+                    format: '{value:%H:%M:%S}'
+                }
+            },
+            series: [
+                {
+                    data: lightData,
+                    name: "Light"
+                },
+                {
+                    data: gyroData,
+                    name: "Gyroscope"
+                }]
+        });
+    });
+</script>
+
+
+</body>
+</html>

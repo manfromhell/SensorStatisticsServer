@@ -1,0 +1,170 @@
+POST http://localhost:8080/sendData?light=169&gyro=21
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193141.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=101&gyro=154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193138.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=146&gyro=156
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193136.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=136&gyro=43
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193133.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=188&gyro=113
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193130.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=176&gyro=18
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193125.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=131&gyro=64
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193122.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=122&gyro=61
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193119.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=40&gyro=17
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-16T193111.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=190&gyro=145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T161033.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=170&gyro=36
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T161031.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=177&gyro=88
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T160717.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=4&gyro=191
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T155654.200.txt
+
+###
+
+POST http://localhost:8080/sendData?light=76&gyro=100Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T155640.400.json
+
+###
+
+POST http://localhost:8080/sendData?light=60&gyro=105Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T155611.400.json
+
+###
+
+POST http://localhost:8080/sendData?light=160&gyro=166Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T155558.400.json
+
+###
+
+POST http://localhost:8080/sendData?light=NE9M1Mku&gyro=hvF64eJO
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-15T154048.200.txt
+
+###
+

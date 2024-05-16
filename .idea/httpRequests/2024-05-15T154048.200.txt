@@ -1,0 +1,1 @@
+light = NE9M1Mku, gyro = hvF64eJO

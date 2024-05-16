@@ -1,0 +1,1 @@
+id = 2, light = 170, gyro = 36
