@@ -3,7 +3,6 @@
 <head>
     <title>Door opening signal</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script type="text/javascript" th:src="@{/js/main.js}"></script>
 </head>
 <body>
 <header th:fragment="site-header">
@@ -48,8 +47,46 @@
 <script type="text/javascript" charset="UTF-8"
         src="//sinoptik.ua/informers_js.php?title=4&amp;wind=2&amp;cities=303014487&amp;lang=ua"></script>
 <p th:text="|Door opening sensors data|"></p>
-<button type="button" th:onclick="setSound(true);">Enable sound</button>
-<button type="button" th:onclick="setSound(false);">Disable sound</button>
+<button type="button" id="setSound">Enable sound</button>
+<script>
+    let soundEnabled = localStorage.getItem('soundEnabled');;
+    const button = document.getElementById('setSound');
+
+    function setSound(enable) {
+        let http = new XMLHttpRequest();
+        let url = "/setSound/"+enable;
+        http.open("POST", url, true);
+        http.setRequestHeader("Content-type", "application/json; charset=utf-8");
+        http.onreadystatechange = function() {
+            if(http.readyState == 4 && http.status == 200) {
+                document.getElementById('sound-status').innerText = http.responseText;
+            } else {
+                console.log(`Error: ${http.status}`);
+            }
+        }
+        http.send(null);
+        if (enable) {
+            button.textContent = 'Disable sound';
+            localStorage.setItem('soundEnabled', 'true');
+            soundEnabled = true;
+        } else {
+            button.textContent = 'Enable sound';
+            localStorage.setItem('soundEnabled', 'false');
+            soundEnabled = false;
+        }
+    }
+
+    // Event listener for the button
+    button.addEventListener('click', () => {
+        if (soundEnabled) {
+            setSound(false);
+        } else {
+            setSound(true);
+        }
+    });
+    setSound(soundEnabled)
+</script>
+
 <p th:text="|Sound status: |"></p>
 <p id='sound-status'></p>
 </body>

@@ -3,7 +3,6 @@
 <head>
     <title>Door opening signal</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script type="text/javascript" th:src="@{/js/main.js}"></script>
 </head>
 <body>
 <header th:fragment="site-header">
@@ -48,7 +47,8 @@
     if (localStorage.getItem('autoReload') === 'true') {
         startAutoReload();
     }
-</script><table border="1">
+</script>
+<table border="1">
     <thead>
     <tr>
         <th th:text="|Id|"/>
